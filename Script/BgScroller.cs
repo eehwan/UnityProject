@@ -5,16 +5,16 @@ using UnityEngine;
 public class BgScroller : MonoBehaviour
 {
     // Start is called before the first frame update
-    //void Start()
-    //{
-    //    
-    //}
+    void Start()
+    {
+
+    }
     public float scrollSpeed = 1.0f;
     // Update is called once per frame
     void Update()
     {
         Vector3 newPosition = transform.position;
-        newPosition.z = Mathf.Repeat(-Time.time * scrollSpeed, 40.0f);
+        newPosition.z = Mathf.Repeat(-Time.time * scrollSpeed, transform.localScale.y);
         transform.position = newPosition;
     }
 }
